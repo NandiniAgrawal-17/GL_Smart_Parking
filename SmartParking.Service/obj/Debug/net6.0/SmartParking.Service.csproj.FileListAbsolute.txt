@@ -1,0 +1,12 @@
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\bin\Debug\net6.0\SmartParking.Service.deps.json
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\bin\Debug\net6.0\SmartParking.Service.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\bin\Debug\net6.0\SmartParking.Service.pdb
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.csproj.AssemblyReference.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.AssemblyInfoInputs.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.AssemblyInfo.cs
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.csproj.CoreCompileInputs.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\refint\SmartParking.Service.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\SmartParking.Service.pdb
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.Service\obj\Debug\net6.0\ref\SmartParking.Service.dll

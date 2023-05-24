@@ -1,0 +1,15 @@
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.csproj.AssemblyReference.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.AssemblyInfoInputs.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.AssemblyInfo.cs
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\bin\Debug\net6.0\SmartParking.DataAccess.deps.json
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\bin\Debug\net6.0\SmartParking.DataAccess.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\bin\Debug\net6.0\SmartParking.DataAccess.pdb
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\bin\Debug\net6.0\SmartParking.Service.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\bin\Debug\net6.0\SmartParking.Service.pdb
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.csproj.CopyComplete
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\refint\SmartParking.DataAccess.dll
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\SmartParking.DataAccess.pdb
+C:\Users\pawan.sharma2\source\repos\SmartParking.WebApi\SmartParking.DataAccess\obj\Debug\net6.0\ref\SmartParking.DataAccess.dll

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.WebApi", "SmartParking.WebApi\SmartParking.WebApi.csproj", "{21B539DF-8D94-474A-82A5-B875F34BF132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.WebApp", "SmartParking.WebApp\SmartParking.WebApp.csproj", "{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.DataAccess", "SmartParking.DataAccess\SmartParking.DataAccess.csproj", "{9839D807-ED48-4130-B2B6-F1FF230EE323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.Service", "SmartParking.Service\SmartParking.Service.csproj", "{EA49B7F4-9712-4B96-BDA9-D13856FCC247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21B539DF-8D94-474A-82A5-B875F34BF132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B539DF-8D94-474A-82A5-B875F34BF132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B539DF-8D94-474A-82A5-B875F34BF132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B539DF-8D94-474A-82A5-B875F34BF132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9839D807-ED48-4130-B2B6-F1FF230EE323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9839D807-ED48-4130-B2B6-F1FF230EE323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9839D807-ED48-4130-B2B6-F1FF230EE323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9839D807-ED48-4130-B2B6-F1FF230EE323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA49B7F4-9712-4B96-BDA9-D13856FCC247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA49B7F4-9712-4B96-BDA9-D13856FCC247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA49B7F4-9712-4B96-BDA9-D13856FCC247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA49B7F4-9712-4B96-BDA9-D13856FCC247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DC93B41-CD37-4E7D-BD71-F42DC92E35C7}
+	EndGlobalSection
+EndGlobal
