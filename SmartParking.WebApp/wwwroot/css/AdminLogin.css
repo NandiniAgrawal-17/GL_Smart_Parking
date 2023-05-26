@@ -1,0 +1,49 @@
+﻿.top-navbar {
+    width: 406%;
+    margin-left: -90px;
+}
+
+.container {
+    display: flex;
+}
+
+.left-page {
+    width: 70%;
+}
+
+    .left-page img {
+        height: 502px;
+        margin-top: -14px;
+        width: 99%;
+    }
+
+.card-details {
+    border: 2px solid black;
+}
+
+.card {
+    box-shadow: 0 8px 16px 0 black;
+    margin-top: 30px;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-body img {
+    width: 25%;
+    border-radius: 50%;
+    margin-left: 130px;
+}
+
+.card-body p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 black;
+}

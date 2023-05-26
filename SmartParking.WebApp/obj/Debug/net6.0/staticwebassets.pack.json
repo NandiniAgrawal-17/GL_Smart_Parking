@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\SmartParking.WebApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\Mobile-login.jpg",
+      "PackagePath": "staticwebassets\\Mobile-login.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\SignUpImageBackground.jpg",
+      "PackagePath": "staticwebassets\\SignUpImageBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\css\\AdminLogin.css",
+      "PackagePath": "staticwebassets\\css\\AdminLogin.css"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\css\\AdminRegister.css",
+      "PackagePath": "staticwebassets\\css\\AdminRegister.css"
+    },
+    {
       "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\img1.jpg",
+      "PackagePath": "staticwebassets\\img1.jpg"
     },
     {
       "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\js\\site.js",
@@ -243,6 +263,22 @@
     {
       "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\loginImageBackground.jpg",
+      "PackagePath": "staticwebassets\\loginImageBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\logo1.png",
+      "PackagePath": "staticwebassets\\logo1.png"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\logo2.png",
+      "PackagePath": "staticwebassets\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\wwwroot\\parkingImage.jpg",
+      "PackagePath": "staticwebassets\\parkingImage.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SmartParking.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
