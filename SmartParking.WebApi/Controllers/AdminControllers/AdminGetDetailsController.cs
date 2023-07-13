@@ -11,6 +11,7 @@ namespace SmartParking.WebApi.Controllers.AdminControllers
     [Route("api/[controller]/[Action]")]
     [ApiController]
     [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+    
     public class AdminGetDetailsController : ControllerBase
     {
         public readonly IViewOperatorDetails _viewOperatorDetails;
@@ -21,6 +22,7 @@ namespace SmartParking.WebApi.Controllers.AdminControllers
             _viewEmployeeDetails= viewEmployeeDetails;
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetOperatorDetails()
         {
             OperatorResponse response = new OperatorResponse();
@@ -39,6 +41,7 @@ namespace SmartParking.WebApi.Controllers.AdminControllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllEmployees()
         {
 

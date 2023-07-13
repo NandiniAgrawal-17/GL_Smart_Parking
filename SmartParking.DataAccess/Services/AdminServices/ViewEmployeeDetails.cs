@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿
+using Microsoft.Extensions.Configuration;
 using SmartParking.Service.Entities.AdminEntities.ViewDetails;
 using SmartParking.Service.Interface.AdminInterface;
 using System;
@@ -22,6 +23,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
             _mySqlConnection = new SqlConnection(_configuration.GetConnectionString("MyDBConnection").ToString());
 
         }
+
         public async Task<EmployeeDetailsResponse> GetAllEmployees()
         {
             EmployeeDetailsResponse response = new EmployeeDetailsResponse();
@@ -39,7 +41,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _mySqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
-                    sqlCommand.CommandTimeout = 180;
+                    //sqlCommand.CommandTimeout = 180;
                     using (DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync())
                     {
                         if (dataReader.HasRows)
@@ -55,9 +57,9 @@ namespace SmartParking.DataAccess.Services.AdminServices
                                 data.Email = dataReader["Email"] != DBNull.Value ? Convert.ToString(dataReader["Email"]) : string.Empty;
                                 data.ContactNo = dataReader["ContactNo"] != DBNull.Value ? Convert.ToString(dataReader["ContactNo"]) : string.Empty;
                                 data.VehicleNumber = dataReader["VehicleNumber"] != DBNull.Value ? Convert.ToString(dataReader["VehicleNumber"]) : string.Empty;
-                                data.VehicleId = dataReader["VehicleId"] != DBNull.Value ? Convert.ToInt32(dataReader["VehicleId"]) : 0;
-                                data.VehicleType = dataReader["VehicleNumber"] != DBNull.Value ? Convert.ToString(dataReader["VehicleType"]) : string.Empty;
-                                data.VehicleModel = dataReader["VehicleNumber"] != DBNull.Value ? Convert.ToString(dataReader["VehicleModel"]) : string.Empty;
+                                data.VehicleId = dataReader["VechileId"] != DBNull.Value ? Convert.ToInt32(dataReader["VechileId"]) : 0;
+                                data.VehicleType = dataReader["VehicleType"] != DBNull.Value ? Convert.ToString(dataReader["VehicleType"]) : string.Empty;
+                                data.VehicleModel = dataReader["VehicleModel"] != DBNull.Value ? Convert.ToString(dataReader["VehicleModel"]) : string.Empty;
 
                                 response.GetEmployeeDetails.Add(data);
 
@@ -80,58 +82,5 @@ namespace SmartParking.DataAccess.Services.AdminServices
 
             return response;
         }
-        /* public async Task<EmployeeRegisterRequest> GetAllEmployees1()
-         {
-             List<EmployeeRegisterRequest> response = new List<EmployeeRegisterRequest>();
-
-
-             try
-             {
-                 if (_mySqlConnection.State != System.Data.ConnectionState.Open)
-                 {
-                     await _mySqlConnection.OpenAsync();
-                 }
-
-                 string SqlQuery = "SELECT * FROM ViewEmployeeDetails";
-                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _mySqlConnection))
-                 {
-                     sqlCommand.CommandType = System.Data.CommandType.Text;
-                     sqlCommand.CommandTimeout = 180;
-                     using (DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync())
-                     {
-                         if (dataReader.HasRows)
-                         {
-
-
-                             while (await dataReader.ReadAsync())
-                             {
-                                 EmployeeRegisterRequest data = new EmployeeRegisterRequest();
-
-                                 data.EmployeeId = dataReader["EmployeeId"] != DBNull.Value ? Convert.ToInt32(dataReader["EmployeeId"]) : 0;
-                                 data.EmployeeName = dataReader["EmployeeName"] != DBNull.Value ? Convert.ToString(dataReader["EmployeeName"]) : string.Empty;
-                                 data.Email = dataReader["Email"] != DBNull.Value ? Convert.ToString(dataReader["Email"]) : string.Empty;
-                                 data.ContactNo = dataReader["ContactNo"] != DBNull.Value ? Convert.ToString(dataReader["ContactNo"]) : string.Empty;
-                                 data.VehicleNumber = dataReader["VehicleNumber"] != DBNull.Value ? Convert.ToString(dataReader["VehicleNumber"]) : string.Empty;
-
-
-                                 response.Add(data);
-                             }
-                         }
-                     }
-                 }
-             }
-
-             catch (Exception ex)
-             {
-
-             }
-             finally
-             {
-                 await _mySqlConnection.CloseAsync();
-                 await _mySqlConnection.DisposeAsync();
-             }
-
-             return response;
-         }*/
     }
 }

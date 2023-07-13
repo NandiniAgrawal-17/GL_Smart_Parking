@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj": {}
+    "C:\\Users\\lenovo\\Downloads\\SmartParkingZipFile (1)\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj": {
+    "C:\\Users\\lenovo\\Downloads\\SmartParkingZipFile (1)\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Downloads\\SmartParkingZipFile (1)\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj",
         "projectName": "SmartParking.WebApp",
-        "projectPath": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj",
-        "packagesPath": "C:\\Users\\pawan.sharma2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pawan.sharma2\\source\\repos\\SmartParking.WebApi\\SmartParking.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Downloads\\SmartParkingZipFile (1)\\SmartParking.WebApi\\SmartParking.WebApp\\SmartParking.WebApp.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Downloads\\SmartParkingZipFile (1)\\SmartParking.WebApi\\SmartParking.WebApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pawan.sharma2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,17 +41,29 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AspNetCoreRateLimit": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.14, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.14, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.extensibility.execution": {
+              "target": "Package",
+              "version": "[2.4.2, )"
             }
           },
           "imports": [
@@ -77,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

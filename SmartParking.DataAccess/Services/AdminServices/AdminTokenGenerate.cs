@@ -26,7 +26,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
 
         }
 
-        public string GenerateJWTToken(int Id)
+        public string GenerateJWTToken(int Id,string Role)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -35,6 +35,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
             var claims = new[] {
          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
          new Claim(JwtRegisteredClaimNames.Sid,Convert.ToString(Id)),
+         new Claim(ClaimTypes.Role, Role),
          //  new Claim(JwtRegisteredClaimNames.Email, Email),
          
          new Claim("Date", DateTime.Now.ToString()),
@@ -75,9 +76,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
                 }
 
 
-                string SqlQuery = @"INSERT INTO AdminToken 
-                                    (AdminId,JWTToken,RefreshToken,Created,Expire) Values 
-                                    (@AdminId,@JWTToken,@RefreshToken, @Created,@Expire);";
+                string SqlQuery = "insert into AdminToken (AdminId,JWTToken,RefreshToken,Created,Expire) Values (@AdminId,@JWTToken,@RefreshToken, @Created,@Expire);";
 
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _mySqlConnection))
                 {
@@ -89,14 +88,20 @@ namespace SmartParking.DataAccess.Services.AdminServices
                     sqlCommand.Parameters.AddWithValue("@Created", DateTime.Now);
                     sqlCommand.Parameters.AddWithValue("@Expire", DateTime.Now.AddMonths(1));
 
-
-                    int Status = await sqlCommand.ExecuteNonQueryAsync();
+                    try
+                    {
+                        int Status =await sqlCommand.ExecuteNonQueryAsync();
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
             }
             finally
             {

@@ -8,8 +8,14 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using SmartParking.Service.Interface.EmployeeInterface;
+using SmartParking.Service.Interface.OperatorInterface;
+using SmartParking.DataAccess.Services.OperatorServices;
+using AspNetCoreRateLimit;
+using SmartParking.Service.Interface.VehicleInterface;
+using SmartParking.DataAccess.Services.VehicleServices;
+{
 
-var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -23,14 +29,21 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAdminAuthentication, AdminAuthentication>();
 builder.Services.AddScoped<IEmployeeAuthentication, EmployeeAuthentication>();
+builder.Services.AddScoped<IOperatorAuthentication, OperatorAuthentication>();
 builder.Services.AddScoped<IGetEmployeeInformation, GetEmployeeDetails>();
 builder.Services.AddScoped<IViewEmployeeDetails, ViewEmployeeDetails>();
 builder.Services.AddScoped<IViewOperatorDetails, ViewOperatorDetails>();
+builder.Services.AddScoped<IUnbookSlot, UnbookSlot>();
+builder.Services.AddScoped<IAssign, AssignService>();
+builder.Services.AddScoped<ICount, SlotCountService>();
+builder.Services.AddScoped<IManualVehicleNumber, EnterVehicleNumberManually>();
+builder.Services.AddScoped<IRegisterVehicles, RegisterNewVehicle>();
+builder.Services.AddScoped<IGetVehicleInformation,GetVehicleInformation>();
 #endregion
 
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
-
+//builder.Services.AddSingleton(TokenValidationParameters);
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,7 +52,7 @@ builder.Services.AddAuthentication(x =>
 }).AddJwtBearer(x =>
 {
     x.RequireHttpsMetadata = false;
-    x.SaveToken = false;
+    x.SaveToken = true;
     x.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
@@ -80,6 +93,32 @@ builder.Services.AddSwaggerGen(option =>
 
 
 
+
+//brute force attack services
+builder.Services.AddMemoryCache();
+
+builder.Services.Configure<IpRateLimitOptions>(options =>
+{
+    options.GeneralRules = new List<RateLimitRule>
+            {
+                new RateLimitRule
+                {
+                    Endpoint = "*",
+                    Limit = 10, // Number of requests allowed within the time span
+                    Period = "1m" // Time span for rate limit (1 minute in this example)
+                }
+            };
+});
+
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
+
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -96,3 +135,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+    }

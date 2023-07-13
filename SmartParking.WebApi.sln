@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.WebApi", "SmartParking.WebApi\SmartParking.WebApi.csproj", "{21B539DF-8D94-474A-82A5-B875F34BF132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.WebApi", "SmartParking.WebApi\SmartParking.WebApi.csproj", "{21B539DF-8D94-474A-82A5-B875F34BF132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.WebApp", "SmartParking.WebApp\SmartParking.WebApp.csproj", "{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.WebApp", "SmartParking.WebApp\SmartParking.WebApp.csproj", "{62F0AA7B-0FDE-47C8-95AA-AC0FC6FDCC4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.DataAccess", "SmartParking.DataAccess\SmartParking.DataAccess.csproj", "{9839D807-ED48-4130-B2B6-F1FF230EE323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.DataAccess", "SmartParking.DataAccess\SmartParking.DataAccess.csproj", "{9839D807-ED48-4130-B2B6-F1FF230EE323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartParking.Service", "SmartParking.Service\SmartParking.Service.csproj", "{EA49B7F4-9712-4B96-BDA9-D13856FCC247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartParking.Service", "SmartParking.Service\SmartParking.Service.csproj", "{EA49B7F4-9712-4B96-BDA9-D13856FCC247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

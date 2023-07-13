@@ -59,6 +59,26 @@ namespace SmartParking.WebApi.Controllers.EmployeeControllers
 
             return Ok(response);
         }
+        [HttpPost]
+
+        [Route("refresh-token")]
+        public async Task<IActionResult> RefreshToken (EmployeeTokens employeetoken)
+        {
+            EmployeeLoginResponse response = new EmployeeLoginResponse();
+            try
+            {
+                response = await _authentication.RefreshToken(employeetoken);
+
+            }
+            
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+            }
+
+            return Ok(response);
+        }
 
     }
 }

@@ -36,6 +36,8 @@ namespace SmartParking.DataAccess.Services.EmployeeServices
             var claims = new[] {
          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
          new Claim(JwtRegisteredClaimNames.Sid,Convert.ToString(EmployeeId)),
+         new Claim(ClaimTypes.Name,Convert.ToString(EmployeeId)),
+         
          //  new Claim(JwtRegisteredClaimNames.Email, Email),
          
          new Claim("Date", DateTime.Now.ToString()),
@@ -75,7 +77,7 @@ namespace SmartParking.DataAccess.Services.EmployeeServices
                 }
 
 
-                string SqlQuery = @"INSERT INTO RefreshToken 
+                string SqlQuery = @"INSERT INTO EmployeeRefreshToken 
                                     (EmployeeId,JWTToken,RefreshToken,Created,Expire) Values 
                                     (@EmployeeId,@JWTToken,@RefreshToken, @Created,@Expire);";
 
@@ -86,8 +88,8 @@ namespace SmartParking.DataAccess.Services.EmployeeServices
                     sqlCommand.Parameters.AddWithValue("@EmployeeId", response.data.EmployeeId);
                     sqlCommand.Parameters.AddWithValue("@JWTToken", response.EmployeeToken.JWTToken);
                     sqlCommand.Parameters.AddWithValue("@RefreshToken", response.EmployeeToken.EmployeeRefreshToken);
-                    sqlCommand.Parameters.AddWithValue("@Created", DateTime.Now);
-                    sqlCommand.Parameters.AddWithValue("@Expire", DateTime.Now.AddMonths(1));
+                    sqlCommand.Parameters.AddWithValue("@Created", response.EmployeeToken.Created);
+                    sqlCommand.Parameters.AddWithValue("@Expire", response.EmployeeToken.Expire);
 
 
                     int Status = await sqlCommand.ExecuteNonQueryAsync();

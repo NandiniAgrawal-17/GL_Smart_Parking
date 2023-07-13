@@ -12,6 +12,7 @@ namespace SmartParking.Service.Interface.EmployeeInterface
         public Task<EmployeeRegisterResponse> RegisterEmployee(EmployeeRegisterRequest request);
 
         public Task<EmployeeLoginResponse> LoginEmployee(EmployeeLoginRequest request);
+        public Task<EmployeeLoginResponse> RefreshToken(EmployeeTokens employeetoken);
 
     }
 }

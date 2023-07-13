@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartParking.Service.Entities.OperatorEntities.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace SmartParking.Service.Entities.EmployeeEntities.Authentication
 
         [Required(ErrorMessage = "Password Is Mandetory")]
         public string Password { get; set; }
+        
     }
 
 
@@ -30,6 +32,6 @@ namespace SmartParking.Service.Entities.EmployeeEntities.Authentication
         public int EmployeeId { get; set; }
 
         public string Email { get; set; }
-
+       
     }
 }

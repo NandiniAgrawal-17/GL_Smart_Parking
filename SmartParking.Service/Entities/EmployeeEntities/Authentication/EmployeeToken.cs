@@ -10,6 +10,9 @@ namespace SmartParking.Service.Entities.EmployeeEntities.Authentication
     {
         public string JWTToken { get; set; }
         public string EmployeeRefreshToken { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime? Expire { get; set; }=DateTime.Now.AddMonths(1);
 
+        
     }
 }

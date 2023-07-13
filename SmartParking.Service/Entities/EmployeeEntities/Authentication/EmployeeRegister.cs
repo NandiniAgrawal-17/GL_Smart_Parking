@@ -27,6 +27,7 @@ namespace SmartParking.Service.Entities.EmployeeEntities.Authentication
         public string ContactNo { get; set; }
         //public string RefreshToken { get; set; }
         public string? VehicleNumber { get; set; }
+     
 
     }
 

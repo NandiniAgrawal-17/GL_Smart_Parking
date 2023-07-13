@@ -42,8 +42,8 @@ namespace SmartParking.DataAccess.Services.AdminServices
                 }
 
                 string SqlQuery = @"INSERT INTO Admin 
-                                    (AdminId,AdminName,Password,Email,ContactNo) Values 
-                                    (@AdminId,@AdminName, @Password,@Email,@ContactNo);";
+                                    (AdminId,AdminName,Password,Email,ContactNo,Role) Values 
+                                    (@AdminId,@AdminName, @Password,@Email,@ContactNo,@Role);";
 
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _mySqlConnection))
                 {
@@ -54,6 +54,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
                     sqlCommand.Parameters.AddWithValue("@Password", request.Password);
                     sqlCommand.Parameters.AddWithValue("@Email", request.Email);
                     sqlCommand.Parameters.AddWithValue("@ContactNo", request.ContactNo);
+                    sqlCommand.Parameters.AddWithValue("@Role", request.Role);
 
 
                     int Status = await sqlCommand.ExecuteNonQueryAsync();
@@ -96,7 +97,7 @@ namespace SmartParking.DataAccess.Services.AdminServices
                     await _mySqlConnection.OpenAsync();
                 }
 
-                string SqlQuery = @"SELECT AdminId,Password
+                string SqlQuery = @"SELECT AdminId,Password,Role
                                     FROM Admin
                                     WHERE AdminId=@AdminId AND Password=@Password";
 
@@ -104,16 +105,15 @@ namespace SmartParking.DataAccess.Services.AdminServices
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
                     sqlCommand.CommandTimeout = 180;
-
                     sqlCommand.Parameters.AddWithValue("@AdminId", request.AdminId);
                     sqlCommand.Parameters.AddWithValue("@Password", request.Password);
+                    sqlCommand.Parameters.AddWithValue("@Role", request.Role);
                     using (DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync())
                     {
                         if (dataReader.HasRows)
                         {
                             await dataReader.ReadAsync();
                             response.Message = "Login Sucessful";
-
                             response.data = new AdminLoginInformation();
                             response.AdminToken = new AdminToken();
 
@@ -121,9 +121,10 @@ namespace SmartParking.DataAccess.Services.AdminServices
 
                             response.data.AdminId = Convert.ToInt32(request.AdminId);
                             response.data.Email = dataReader[1].ToString();
+                            response.data.Role = dataReader[2].ToString();
 
 
-                            response.AdminToken.JWTToken = tokenGenerate.GenerateJWTToken(response.data.AdminId);
+                            response.AdminToken.JWTToken = tokenGenerate.GenerateJWTToken(response.data.AdminId,response.data.Role);
                             response.AdminToken.AdminRefreshToken = tokenGenerate.GenerateRefresh();
 
                             tokenGenerate.AdminTokenDB(response);

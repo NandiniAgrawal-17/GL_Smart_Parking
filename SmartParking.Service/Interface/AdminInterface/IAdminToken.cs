@@ -9,7 +9,7 @@ namespace SmartParking.Service.Interface.AdminInterface
 {
     public interface IAdminToken
     {
-        public string GenerateJWTToken(int Id);
+        public string GenerateJWTToken(int Id,string Role);
 
         public Task AdminTokenDB(AdminLoginResponse response);
         public string GenerateRefresh();
