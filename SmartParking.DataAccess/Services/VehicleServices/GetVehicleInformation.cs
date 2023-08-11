@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using SmartParking.Service.Entities.EmployeeEntities;
 using SmartParking.Service.Entities.EmployeeEntities.Authentication;
+using SmartParking.Service.Entities.SlotEntities;
 using SmartParking.Service.Interface.VehicleInterface;
 
 namespace SmartParking.DataAccess.Services.VehicleServices
@@ -71,14 +72,17 @@ namespace SmartParking.DataAccess.Services.VehicleServices
                     {
                         if (dataReader.HasRows)
                         {
-                            await dataReader.ReadAsync();
-                            response.Message = "Vehicle Number Exist";
+                            response.Data = new VehicleInformation();
+                            if (await dataReader.ReadAsync())
+                            {
 
-                            response.data = new VehicleInformation();
-                         
-                            response.data.VehicleType= dataReader[1].ToString();
-                            response.data.VehicleModel = dataReader[1].ToString();
-                             response.data.VehicleNumber = dataReader[1].ToString();
+                                response.Data.VehicleType = dataReader["VehicleType"] != DBNull.Value ? Convert.ToString(dataReader["VehicleType"]) : null;
+                                response.Data.VehicleModel = dataReader["VehicleModel"] != DBNull.Value ? Convert.ToString(dataReader["VehicleModel"]) : null;
+                                response.Data.VehicleNumber = dataReader["VehicleNumber"] != DBNull.Value ? Convert.ToString(dataReader["VehicleNumber"]) : null;
+                                 response.Data.EmployeeId = dataReader["EmployeeId"] != DBNull.Value ? Convert.ToInt32(dataReader["EmployeeId"]) : 0;
+
+                            }
+
                             /*response.data.EmployeeId = Convert.ToInt32(EmployeeId);*/
 
                         }

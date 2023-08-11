@@ -9,11 +9,12 @@ namespace SmartParking.Service.Entities.OperatorEntities.Authentication
 {
     public class SlotAssignRequest
     {
-
+        [Required(ErrorMessage = "EmployeeId Is Mandetory")]
         public string EmployeeId { get; set; }
 
         [Required(ErrorMessage = "Password Is Mandetory")]
         public string VehicleNumber { get; set; }
+
         [Required(ErrorMessage = "Slot is Required")]
         public int Slot { get; set; }
         public string Occupancy { get; set; }

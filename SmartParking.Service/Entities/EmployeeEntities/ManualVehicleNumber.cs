@@ -18,7 +18,7 @@ namespace SmartParking.Service.Entities.EmployeeEntities
         public bool IsSuccess { get; set; }
         public string Message { get; set; }
 
-        public VehicleInformation data { get; set; }
+        public VehicleInformation Data { get; set; }
 
     }
     public class VehicleInformation

@@ -39,10 +39,14 @@ builder.Services.AddScoped<ICount, SlotCountService>();
 builder.Services.AddScoped<IManualVehicleNumber, EnterVehicleNumberManually>();
 builder.Services.AddScoped<IRegisterVehicles, RegisterNewVehicle>();
 builder.Services.AddScoped<IGetVehicleInformation,GetVehicleInformation>();
-#endregion
+builder.Services.AddScoped<ViewSlotHistory, GenerateSlotReport>();
+builder.Services.AddScoped<IBookSlotOnPriority, BookSlotOnSpecialRequest>();
+builder.Services.AddScoped<IAddSlot, AddSlotsRequired>();
+
+    #endregion
 
 
-var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+    var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 //builder.Services.AddSingleton(TokenValidationParameters);
 builder.Services.AddAuthentication(x =>
 {
